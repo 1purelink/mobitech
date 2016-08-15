@@ -13,6 +13,10 @@ html {
     font-size: 1em;
     line-height: 1.4;
 }
+body {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -88,43 +92,101 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.boxlight {
-    background-color: #DECB02;
+.wrap {
+    overflow: hidden;
+    margin: 10px;
 }
-
-.boxdark {
-    background-color: #EEDA07;
-}
-
-.boxmedium {
-    background-color: #FFEB01;
-}
-
-.card {
-    display: inline-block;
-    height: 200px;
-    width: 200px;
+.box {
+    float: left;
     position: relative;
+    width: 20%;
+    padding-bottom: 20%;
+}
+.boxInner {
+    position: absolute;
+    left: 0.5px;
+    right: 0.5px;
+    top: 0.5px;
+    bottom: 0.5px;
+    overflow: hidden;
+    line-height: 100px;
+    text-align: center;
+}
+.boxInner img {
+    width: 100%;
+}
+.boxInner span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+.boxInner .titleBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: -320px;
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    height:100%;
+    width:100%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+    margin-bottom: 0;
+}
+@media only screen and (max-width : 480px) {
+    /* Smartphone view: 1 tile */
+    .box {
+        width: 50%;
+        padding-bottom: 50%;
+    }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+    /* Tablet view: 2 tiles */
+    .box {
+        width: 50%;
+        padding-bottom: 50%;
+    }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+    /* Small desktop / ipad view: 3 tiles */
+    .box {
+        width: 33.3%;
+        padding-bottom: 33.3%;
+    }
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+    /* Medium desktop: 4 tiles */
+    .box {
+        width: 25%;
+        padding-bottom: 25%;
+    }
 }
 
-.ip5 {
-    background: url(img/ip5.png) no-repeat center center fixed #DECB02;
-    background-size: cover;
+img {
+    max-height: 80%;
+    object-fit: contain;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#item-1 {background-color: #F36E21;}
+#item-2 {background-color: #37BAAF;}
+#item-3 {background-color: #95BF32;}
+#item-4 {background-color: #FCFCFE;}
+#item-5 {background-color: #282726;}
+#item-6 {background-color: #BCAE92;}
+#item-7 {background-color: #049AD7;}
+#item-8 {background-color: #2E373B;}
+#item-9 {background-color: #25252D;}
+#item-10 {background-color: #C3B69C;}
+#item-11 {background-color: #04A4DB;}
+#item-12 {background-color: #313D40;}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
